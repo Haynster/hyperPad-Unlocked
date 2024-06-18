@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc5mkd4ltx8u6"]
+
+[ext_resource type="FontFile" uid="uid://cskujevklx08p" path="res://Poppins-SemiBold.ttf" id="1_lkui4"]
+[ext_resource type="Script" path="res://loading.gd" id="1_oyssc"]
+[ext_resource type="Texture2D" uid="uid://dsrmnjo0kg1m7" path="res://icons/loading.png" id="2_pnykl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jud3y"]
+font = ExtResource("1_lkui4")
+font_size = 12
+
+[sub_resource type="Animation" id="Animation_x1rba"]
+resource_name = "loading"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_rotate"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_103bq"]
+_data = {
+"loading": SubResource("Animation_x1rba")
+}
+
+[node name="Loading" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -48.0
+offset_right = 80.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oyssc")
+metadata/text = ""
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.505882)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Preparing Player..."
+label_settings = SubResource("LabelSettings_jud3y")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Icon" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.407843)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("2_pnykl")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_103bq")
+}

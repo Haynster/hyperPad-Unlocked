@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://crp8eyrxppdyx"]
+
+[ext_resource type="FontFile" uid="uid://4ku76emdxqe" path="res://Poppins-Regular.ttf" id="1_bb84r"]
+[ext_resource type="Script" path="res://behaviour_creator_element.gd" id="2_p2ele"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8n7ii"]
+bg_color = Color(1, 1, 1, 0.0666667)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.270588)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="BehaviourCreatorElement" type="Button"]
+offset_left = 8.0
+offset_right = 184.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
+theme_override_fonts/font = ExtResource("1_bb84r")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_8n7ii")
+text = "Element"
+script = ExtResource("2_p2ele")
+metadata/value = 0
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

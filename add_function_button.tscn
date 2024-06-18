@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://r82s4ryqqh2b"]
+
+[ext_resource type="Script" path="res://add_function_button.gd" id="1_gf4w0"]
+[ext_resource type="Texture2D" uid="uid://cm00jnom67kmi" path="res://behaviour-editor-icons/behaviour_list_element.png" id="2_nl832"]
+[ext_resource type="FontFile" uid="uid://cl2wx61lqptyp" path="res://Poppins-Medium.ttf" id="3_2tccm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mjk3"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2pr5"]
+font = ExtResource("3_2tccm")
+font_size = 12
+
+[node name="AddFunctionButton" type="Control"]
+modulate = Color(1, 1, 1, 0.517647)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 174.0
+offset_bottom = 52.0
+script = ExtResource("1_gf4w0")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2mjk3")
+
+[node name="Button" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_nl832")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+ Add Function"
+label_settings = SubResource("LabelSettings_f2pr5")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

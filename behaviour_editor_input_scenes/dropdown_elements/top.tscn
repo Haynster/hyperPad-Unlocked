@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh2ux4miy1eiu"]
+
+[ext_resource type="FontFile" uid="uid://cl2wx61lqptyp" path="res://Poppins-Medium.ttf" id="1_uqomj"]
+[ext_resource type="Script" path="res://behaviour_editor_input_scenes/dropdown_elements/dropdown_button.gd" id="2_lk1mr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glj6x"]
+content_margin_left = 10.0
+bg_color = Color(0.262933, 0.262932, 0.262932, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.435192, 0.435192, 0.435192, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go6ke"]
+content_margin_left = 10.0
+bg_color = Color(0, 0.733333, 0.470588, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.435294, 0.435294, 0.435294, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[node name="Button" type="Button"]
+offset_right = 176.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.647059)
+theme_override_fonts/font = ExtResource("1_uqomj")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_glj6x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_go6ke")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_go6ke")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_glj6x")
+theme_override_styles/focus = SubResource("StyleBoxFlat_glj6x")
+text = "dfgfgfgfgfg"
+alignment = 0
+script = ExtResource("2_lk1mr")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

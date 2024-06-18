@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgm6ueitybjyr"]
+
+[ext_resource type="Script" path="res://behaviour_creator_element_edit.gd" id="1_6rqk3"]
+[ext_resource type="FontFile" uid="uid://4ku76emdxqe" path="res://Poppins-Regular.ttf" id="1_vfilc"]
+[ext_resource type="FontFile" uid="uid://cskujevklx08p" path="res://Poppins-SemiBold.ttf" id="2_ccrr1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngc8k"]
+content_margin_left = 6.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.266667)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_ond1y"]
+font = ExtResource("2_ccrr1")
+font_size = 10
+font_color = Color(1, 1, 1, 0.717647)
+
+[node name="behaviour_creator_element_edit" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 176.0
+offset_bottom = 40.0
+script = ExtResource("1_6rqk3")
+metadata/Title = ""
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 176.0
+offset_bottom = 37.0
+theme_override_constants/minimum_character_width = 0
+theme_override_fonts/font = ExtResource("1_vfilc")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_ngc8k")
+placeholder_text = "Add some text"
+metadata/Title = ""
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 16.0
+text = "d"
+label_settings = SubResource("LabelSettings_ond1y")
+vertical_alignment = 2
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

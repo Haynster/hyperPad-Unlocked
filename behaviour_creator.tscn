@@ -1,0 +1,354 @@
+[gd_scene load_steps=23 format=3 uid="uid://h5b4tedsyatw"]
+
+[ext_resource type="FontFile" uid="uid://cskujevklx08p" path="res://Poppins-SemiBold.ttf" id="1_e68xd"]
+[ext_resource type="Script" path="res://behaviour_creator.gd" id="1_u7q42"]
+[ext_resource type="FontFile" uid="uid://4ku76emdxqe" path="res://Poppins-Regular.ttf" id="2_em3d3"]
+[ext_resource type="FontFile" uid="uid://bxjcyqm07sdsy" path="res://Poppins-Bold.ttf" id="3_vrev7"]
+[ext_resource type="PackedScene" uid="uid://dpwag6c07nw0m" path="res://behaviour_editor_input_scenes/dropdown.tscn" id="4_323vb"]
+[ext_resource type="PackedScene" uid="uid://bc5mkd4ltx8u6" path="res://loading.tscn" id="6_wrvwl"]
+[ext_resource type="FontFile" uid="uid://cl2wx61lqptyp" path="res://Poppins-Medium.ttf" id="7_1hbab"]
+[ext_resource type="Texture2D" uid="uid://bdwgbq2sgcnjr" path="res://behaviour-editor-icons/back@2x.png" id="8_8ckau"]
+[ext_resource type="Script" path="res://behaviour_creator_element_edit.gd" id="9_msmhs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_steyv"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 1
+border_width_bottom = 1
+border_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_huxtj"]
+font = ExtResource("2_em3d3")
+font_size = 12
+font_color = Color(1, 1, 1, 0.686275)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jj7bm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jltqy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad682"]
+bg_color = Color(0, 0, 0, 0.509804)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkxcd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3iu3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo01l"]
+content_margin_left = 6.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.266667)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn5oc"]
+bg_color = Color(0, 0, 0, 0.596078)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.258824)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_el8oi"]
+font = ExtResource("3_vrev7")
+font_size = 18
+font_color = Color(1, 1, 1, 0.686275)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hmc5d"]
+font = ExtResource("7_1hbab")
+font_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngc8k"]
+content_margin_left = 6.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.266667)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_ond1y"]
+font = ExtResource("1_e68xd")
+font_size = 10
+font_color = Color(1, 1, 1, 0.717647)
+
+[node name="BehaviourCreator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u7q42")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.243137, 0.262745, 1)
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 192.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_steyv")
+
+[node name="BG2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_steyv")
+
+[node name="JSON" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -416.0
+offset_right = 416.0
+offset_bottom = 64.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_huxtj")
+horizontal_alignment = 1
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_e68xd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jj7bm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jltqy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ad682")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dkxcd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t3iu3")
+text = "Save"
+
+[node name="Load" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_right = -64.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_e68xd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jj7bm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jltqy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ad682")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dkxcd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t3iu3")
+text = "Load"
+
+[node name="Add" type="Button" parent="."]
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("1_e68xd")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jj7bm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jltqy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ad682")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dkxcd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t3iu3")
+text = "+"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 4.0
+offset_right = 188.0
+offset_bottom = 28.0
+theme_override_constants/minimum_character_width = 0
+theme_override_fonts/font = ExtResource("2_em3d3")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_oo01l")
+metadata/Title = ""
+
+[node name="Elements" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_right = 192.0
+grow_vertical = 2
+
+[node name="AddElement" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -168.0
+offset_right = 128.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wn5oc")
+
+[node name="Elements" type="Control" parent="AddElement"]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 88.0
+offset_right = 216.0
+offset_bottom = 288.0
+
+[node name="Title" type="Label" parent="AddElement"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+text = "Add an Input Field"
+label_settings = SubResource("LabelSettings_el8oi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DropDown" parent="AddElement" instance=ExtResource("4_323vb")]
+offset_left = 40.0
+offset_top = 48.0
+offset_right = 216.0
+offset_bottom = 72.0
+metadata/elements = ["title", "full_title", "toggle_labeled", "input_field", "input_field_labeled", "dropdown"]
+metadata/selected = "title"
+
+[node name="Done" type="Button" parent="AddElement"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 280.0
+offset_right = 224.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("1_e68xd")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jj7bm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jltqy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ad682")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dkxcd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t3iu3")
+text = "Done"
+
+[node name="FileDialogSave" type="FileDialog" parent="."]
+title = "Open a Directory"
+size = Vector2i(392, 159)
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="FileDialogLoad" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(392, 159)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[node name="Loading" parent="." instance=ExtResource("6_wrvwl")]
+visible = false
+layout_mode = 1
+
+[node name="Back" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.345098)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1216.0
+offset_top = 660.0
+offset_right = 1280.0
+offset_bottom = 716.0
+
+[node name="Label" type="Label" parent="Back"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+label_settings = SubResource("LabelSettings_hmc5d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="Back"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -4.0
+offset_right = 24.0
+offset_bottom = 44.0
+grow_horizontal = 2
+texture_normal = ExtResource("8_8ckau")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="behaviour_creator_element_edit" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 200.0
+offset_top = 672.0
+offset_right = 376.0
+offset_bottom = 712.0
+script = ExtResource("9_msmhs")
+metadata/Title = "Description"
+
+[node name="LineEdit" type="LineEdit" parent="behaviour_creator_element_edit"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 176.0
+offset_bottom = 37.0
+theme_override_constants/minimum_character_width = 0
+theme_override_fonts/font = ExtResource("2_em3d3")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_ngc8k")
+placeholder_text = "Add some text"
+metadata/Title = ""
+
+[node name="Label" type="Label" parent="behaviour_creator_element_edit"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 16.0
+text = "d"
+label_settings = SubResource("LabelSettings_ond1y")
+vertical_alignment = 2
+
+[connection signal="button_down" from="Save" to="." method="_on_save_button_down"]
+[connection signal="button_down" from="Load" to="." method="_on_load_button_down"]
+[connection signal="button_down" from="Add" to="." method="_on_add_button_down"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="selected_changed" from="AddElement/DropDown" to="." method="_on_drop_down_selected_changed"]
+[connection signal="button_down" from="AddElement/Done" to="." method="_on_done_button_down"]
+[connection signal="dir_selected" from="FileDialogSave" to="." method="_on_file_dialog_dir_selected"]
+[connection signal="file_selected" from="FileDialogLoad" to="." method="_on_file_dialog_load_file_selected"]
+[connection signal="button_down" from="Back/Button" to="." method="_on_button_button_down"]
+[connection signal="text_changed" from="behaviour_creator_element_edit/LineEdit" to="behaviour_creator_element_edit" method="_on_line_edit_text_changed"]

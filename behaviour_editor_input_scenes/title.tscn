@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckmxheehwah1t"]
+
+[ext_resource type="Script" path="res://behaviour_editor_input_scenes/title.gd" id="1_sqjgd"]
+[ext_resource type="FontFile" uid="uid://4ku76emdxqe" path="res://Poppins-Regular.ttf" id="2_7s1sd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fy30q"]
+font = ExtResource("2_7s1sd")
+font_size = 11
+font_color = Color(1, 1, 1, 0.615686)
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.92, 0.92)
+script = ExtResource("1_sqjgd")
+metadata/value = 0
+metadata/title = ""
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_top = -3.26087
+offset_right = 191.0
+offset_bottom = 16.7391
+text = "Move By:"
+label_settings = SubResource("LabelSettings_fy30q")
+vertical_alignment = 2

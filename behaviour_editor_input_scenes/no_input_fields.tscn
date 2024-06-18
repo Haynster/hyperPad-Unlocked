@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct61b8mb3g6p5"]
+
+[ext_resource type="Texture2D" uid="uid://ciba8vp3gju3k" path="res://behaviour-editor-icons/noinputfields.png" id="1_tnr1l"]
+[ext_resource type="FontFile" uid="uid://4ku76emdxqe" path="res://Poppins-Regular.ttf" id="2_qgldo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qjjlj"]
+font = ExtResource("2_qgldo")
+font_size = 10
+
+[node name="NoInputFields" type="Control"]
+modulate = Color(1, 1, 1, 0.356863)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 96.0
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 72.0
+grow_horizontal = 2
+texture = ExtResource("1_tnr1l")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.5
+offset_top = 80.0
+offset_right = 76.5
+offset_bottom = 128.0
+grow_horizontal = 2
+text = "This behaviour has no input fields."
+label_settings = SubResource("LabelSettings_qjjlj")
+horizontal_alignment = 1

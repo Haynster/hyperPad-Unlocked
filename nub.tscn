@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://bks3mrwgur6e7"]
+
+[ext_resource type="Script" path="res://nub.gd" id="1_8bdtl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp74n"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5epoi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l3a1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cn1gb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3yguu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gafx4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5k2e"]
+
+[node name="Nub" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = ExtResource("1_8bdtl")
+
+[node name="Nub" type="Panel" parent="."]
+layout_mode = 2
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pp74n")
+
+[node name="Inside" type="Panel" parent="."]
+layout_mode = 2
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5epoi")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5l3a1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cn1gb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3yguu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gafx4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5k2e")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 8.0
+default_color = Color(0.215902, 0.215902, 0.215902, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

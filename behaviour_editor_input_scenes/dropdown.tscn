@@ -1,0 +1,124 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpwag6c07nw0m"]
+
+[ext_resource type="Script" path="res://dropdown.gd" id="1_i1oxw"]
+[ext_resource type="Texture2D" uid="uid://7ogbgusb0s5x" path="res://behaviour-editor-icons/dropdown.png" id="2_hcwcm"]
+[ext_resource type="FontFile" uid="uid://4ku76emdxqe" path="res://Poppins-Regular.ttf" id="3_ljara"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xugth"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.360784)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_hf8vu"]
+font = ExtResource("3_ljara")
+font_size = 11
+font_color = Color(1, 1, 1, 0.698039)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohxem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sck38"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hltip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7kxrs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vweo"]
+
+[sub_resource type="Animation" id="Animation_tprc4"]
+resource_name = "open_close"
+length = 120.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Elements:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.297302, 1),
+"update": 0,
+"values": [Vector2(0, 20), Vector2(0, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.297302, 1),
+"update": 0,
+"values": [0.0, 3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_238vw"]
+_data = {
+"open_close": SubResource("Animation_tprc4")
+}
+
+[node name="DropDown" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 24.0
+script = ExtResource("1_i1oxw")
+metadata/elements = []
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xugth")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 8.0
+offset_right = 166.0
+offset_bottom = 18.0
+pivot_offset = Vector2(8, 5)
+texture = ExtResource("2_hcwcm")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 150.0
+offset_bottom = 24.0
+text = "Up Arrow"
+label_settings = SubResource("LabelSettings_hf8vu")
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 24.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ohxem")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sck38")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hltip")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kxrs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1vweo")
+
+[node name="Elements" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+offset_top = 20.0
+offset_right = 176.0
+offset_bottom = 44.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_238vw")
+}
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

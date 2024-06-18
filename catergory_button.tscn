@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgnvpd4di2q0h"]
+
+[ext_resource type="FontFile" uid="uid://cl2wx61lqptyp" path="res://Poppins-Medium.ttf" id="1_7aqjv"]
+[ext_resource type="Texture2D" uid="uid://bdwgbq2sgcnjr" path="res://behaviour-editor-icons/back@2x.png" id="2_t7qp4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_35aq3"]
+font = ExtResource("1_7aqjv")
+font_size = 10
+
+[node name="CatergoryButton" type="Control"]
+modulate = Color(1, 1, 1, 0.345098)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+label_settings = SubResource("LabelSettings_35aq3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -4.0
+offset_right = 24.0
+offset_bottom = 44.0
+grow_horizontal = 2
+texture_normal = ExtResource("2_t7qp4")
+ignore_texture_size = true
+stretch_mode = 0

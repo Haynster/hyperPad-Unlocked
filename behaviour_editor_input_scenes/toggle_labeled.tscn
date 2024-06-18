@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcdubwc7vl1cn"]
+
+[ext_resource type="Script" path="res://behaviour_editor_input_scenes/toggle_labeled.gd" id="1_bipke"]
+[ext_resource type="FontFile" uid="uid://4ku76emdxqe" path="res://Poppins-Regular.ttf" id="3_4qn10"]
+[ext_resource type="PackedScene" uid="uid://u8dqktpsg1ch" path="res://behaviour_editor_input_scenes/toggle.tscn" id="3_nromd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ia1ne"]
+font = ExtResource("3_4qn10")
+font_size = 12
+font_color = Color(1, 1, 1, 0.615686)
+
+[node name="ToggleLabeled" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.92, 0.92)
+script = ExtResource("1_bipke")
+metadata/value = 0
+metadata/input = "Text"
+metadata/toggled = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.08696
+offset_top = 1.0
+offset_right = 18.913
+offset_bottom = 31.0
+text = "x"
+label_settings = SubResource("LabelSettings_ia1ne")
+vertical_alignment = 1
+
+[node name="Toggle" parent="." instance=ExtResource("3_nromd")]
+layout_mode = 1
+offset_left = 139.131
+offset_right = 139.131

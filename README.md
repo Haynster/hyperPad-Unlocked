@@ -1,8 +1,5 @@
 # hyperPad Unlocked
- A remake of the iOS and Mac OS exclusive game creator, made in Godot.
-
-About
-hyperPad Unlocked is a recreation of the currently iOS and MacOS exclusive game creation tool, being made in godot.
+A recreation of the currently iOS and MacOS exclusive game creation tool, being made in godot.
 
 # PC Exclusive Controls
 ## Behavior Editor
